@@ -26,4 +26,13 @@ actor {
     return (counter);
   };
 
+  public func divide(n: Nat, m : Nat) : async Bool {
+    let remainder = n % m;
+    if(remainder == 0) {
+        return (true) 
+      } else {
+        return (false);
+      }
+    };
+
 };
