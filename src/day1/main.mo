@@ -26,7 +26,7 @@ actor {
     return (counter);
   };
 
-  public func divide(n: Nat, m : Nat) : async Bool {
+  public func divide(n : Nat, m : Nat) : async Bool {
     let remainder = n % m;
     if(remainder == 0) {
         return (true) 
@@ -35,7 +35,7 @@ actor {
       }
     };
   
-  public func is_even(n: Nat) : async Bool {
+  public func is_even(n : Nat) : async Bool {
     if(n % 2 == 0){
       return (true)
     } else {
@@ -43,5 +43,17 @@ actor {
     }
   };
 
+  public func sum_of_array(userArray : [Nat]) : async Nat {
+    
+    var sum = 0;
+    if(userArray.size() == 0){
+      return 0;
+    } else {
+      for (value in userArray.vals()){
+        sum += value;
+      };
+    };
+   return sum;
+  };
 
 };
