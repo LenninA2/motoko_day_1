@@ -34,5 +34,14 @@ actor {
         return (false);
       }
     };
+  
+  public func is_even(n: Nat) : async Bool {
+    if(n % 2 == 0){
+      return (true)
+    } else {
+      return (false);
+    }
+  };
+
 
 };
