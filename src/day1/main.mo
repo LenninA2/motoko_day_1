@@ -1,3 +1,5 @@
+import Debug "mo:base/Debug";
+
 actor {
   public func greet(name : Text) : async Text {
     return "Hello, " # name # "!";
@@ -44,7 +46,6 @@ actor {
   };
 
   public func sum_of_array(userArray : [Nat]) : async Nat {
-    
     var sum = 0;
     if(userArray.size() == 0){
       return 0;
@@ -54,6 +55,20 @@ actor {
       };
     };
    return sum;
+  };
+
+  public func maximum(userArray : [Nat]) : async Nat {
+    var max : Nat = 0; 
+    if(userArray.size() == 0){
+      return 0;
+    } else {
+      for(value in userArray.vals()){
+        if(value >= max){
+          max := value;
+        };
+      };
+    };
+    return max;
   };
 
 };
