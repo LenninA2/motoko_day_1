@@ -11,4 +11,7 @@ actor {
     return n**2;
   };
 
+  public func days_to_second(n : Nat) : async Nat {
+    return n*24*60*60;
+  }
 };
