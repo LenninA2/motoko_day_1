@@ -4,14 +4,26 @@ actor {
   };
 
   public func add(n : Nat, m : Nat) : async Nat {
-    return n + m;
+    return (n + m);
   };
 
   public func square(n : Nat) : async Nat {
-    return n**2;
+    return (n**2);
   };
 
   public func days_to_second(n : Nat) : async Nat {
-    return n*24*60*60;
-  }
+    return (n*24*60*60);
+  };
+
+  var counter : Nat = 0;
+  public func increment_counter(n : Nat) : async Nat {
+    counter += n; 
+    return (counter);
+  };
+
+  public func clear_counter() : async Nat {
+    counter := 0;
+    return (counter);
+  };
+
 };
