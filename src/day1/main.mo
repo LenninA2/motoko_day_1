@@ -1,5 +1,7 @@
 import Debug "mo:base/Debug";
 import Array "mo:base/Array";
+import lter "mo:base/Iter";
+import Iter "mo:base/Iter";
 
 actor {
   public func greet(name : Text) : async Text {
@@ -86,17 +88,17 @@ actor {
   };
 
   public func selection_sort(userArray : [Nat]) : async [Nat] {
-    for(i in range(0, userArray.size() -1)){
-      var iMin : Int = i;
+    for(i in Iter.range(0, userArray.size() -1) ){
+      var iMin : Nat = i;
       var tmp : Nat = userArray[iMin];
-      for(j in range(i + 1, array.size() -1)){
+      for(j in Iter.range(i + 1, userArray.size() -1)){
         if(userArray[j] < userArray[i]){
           var iMin = j;
         };
-      };
-      if(iMin != i){
+        if(iMin != i){
         userArray[iMin] := userArray[j];
         userArray[j] := tmp;
+        };
       };
     };
     return userArray;
