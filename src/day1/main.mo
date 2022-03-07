@@ -1,4 +1,5 @@
 import Debug "mo:base/Debug";
+import Array "mo:base/Array";
 
 actor {
   public func greet(name : Text) : async Text {
@@ -69,6 +70,19 @@ actor {
       };
     };
     return max;
+  };
+
+
+  // uses the filter array function to remove an Natural # n from any array
+  public func remove_from_array(userArray : [Nat], n : Nat) : async [Nat] {
+    let f = func(i : Nat) : Bool {
+      if(i == n){
+        return false;
+      }else{
+        return true;
+      }
+    };
+  return(Array.filter<Nat>(userArray, f));
   };
 
 };
